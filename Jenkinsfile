@@ -11,7 +11,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS 14', type: 'Tool'
+                    def npmTool = tool name: 'NodeJS', type: 'Tool'
                     sh "${npmTool}/bin/npm install"
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS 14', type: 'Tool'
+                    def npmTool = tool name: 'NodeJS', type: 'Tool'
                     sh "${npmTool}/bin/npm run build"
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS 14', type: 'Tool'
+                    def npmTool = tool name: 'NodeJS', type: 'Tool'
                     sh "${npmTool}/bin/npm start"
                 }
             }
