@@ -11,7 +11,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS', type: 'Tool'
+                    def npmTool = tool name: 'NodeJs-18.18.0', type: 'Tool'
                     sh "${npmTool}/bin/npm install"
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS', type: 'Tool'
+                    def npmTool = tool name: 'NodeJs-18.18.0', type: 'Tool'
                     sh "${npmTool}/bin/npm run build"
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def npmTool = tool name: 'NodeJS', type: 'Tool'
+                    def npmTool = tool name: 'NodeJs-18.18.0', type: 'Tool'
                     sh "${npmTool}/bin/npm start"
                 }
             }
